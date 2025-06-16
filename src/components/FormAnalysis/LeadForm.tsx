@@ -4,6 +4,7 @@ function LeadForm() {
   const [formData, setFormData] = useState({
     name: "",
     telefone: "",
+    tipoAcidente:"",
     cidade: "",
     dataAcidente: "",
   });
@@ -47,6 +48,14 @@ function LeadForm() {
               type="text"
               name="cidade"
               placeholder="Cidade"
+              className="w-full p-3 border border-gray-300 rounded-md"
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="text"
+              name="tipoAcidente"
+              placeholder="Descreva o tipo de acidente"
               className="w-full p-3 border border-gray-300 rounded-md"
               onChange={handleChange}
               required

@@ -1,6 +1,9 @@
 // App.js
+import Benefits from "./components/Benefits/Benefits";
+// import Depoimentos from "./components/Depoimentos/Depoimentos";
 import LeadForm from "./components/FormAnalysis/LeadForm";
 import Header from "./components/header/Header";
+import HelpSection from "./components/HelpSection/HelpSection";
 import WhyCheckSeguro from "./components/WhyCheck/WhyCheckSeguro"; // Mantenha a importação aqui!
 
 function App() {
@@ -25,6 +28,9 @@ function App() {
           </div>
 
         </div>
+        <Benefits />
+        {/* <Depoimentos /> */}
+        <HelpSection />
 
         {/* Outras seções da sua página */}
       </div>
