@@ -1,22 +1,63 @@
 import { useState } from "react";
+import usePublicApi from "../../Api/Api";
 
 function LeadForm() {
   const [formData, setFormData] = useState({
-    name: "",
+    nome: "",
     telefone: "",
     tipoAcidente:"",
     cidade: "",
     dataAcidente: "",
   });
-
+  const api = usePublicApi()
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Enviando:", formData);
-    // Aqui você envia para API ou backend
+    const { nome, telefone, tipoAcidente, cidade, dataAcidente } = formData;
+    if (!nome || !telefone || !tipoAcidente || !cidade || !dataAcidente) {
+      alert("Por favor, preencha todos os campos.");
+      return;
+    }
+    setIsSubmitting(true);
+    setError("");
+    try {
+      const response = api.post("/lead", {
+        nome,
+        telefone,
+        tipoAcidente,
+        cidade,
+        dataAcidente,
+      });
+      response.then((res) => {
+        setIsSubmitting(false);
+        if (res.status === 201) {
+          setMessage("Formulário enviado com sucesso!");
+          setFormData({
+            nome: "",
+            telefone: "",
+            tipoAcidente: "",
+            cidade: "",
+            dataAcidente: "",
+          });
+        } else {
+          setError("Ocorreu um erro ao enviar o formulário. Tente novamente.");
+        }
+      });
+      setIsSubmitting(false);
+
+      
+    } catch (error) {
+      
+      console.error("Erro ao enviar o formulário:", error);
+      setError("Ocorreu um erro ao enviar o formulário. Tente novamente mais tarde.");
+    }
+
   };
 
   return (
@@ -30,7 +71,7 @@ function LeadForm() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <input
               type="text"
-              name="name"
+              name="nome"
               placeholder="Nome completo"
               className="w-full p-3 border border-gray-300 rounded-md"
               onChange={handleChange}
@@ -60,19 +101,25 @@ function LeadForm() {
               onChange={handleChange}
               required
             />
-            <input
-              type="date"
-              name="dataAcidente"
-              className="w-full p-3 border border-gray-300 rounded-md text-black"
-              onChange={handleChange}
-              required
-            />
+           <label className="block text-gray-700 font-medium">
+  Data do acidente
+</label>
+<input
+  type="date"
+  name="dataAcidente"
+  className="w-full p-3 border border-gray-300 rounded-md text-black"
+  onChange={handleChange}
+  required
+/>
             <button
               type="submit"
               className="bg-[#D4AF37] text-white w-full py-3 rounded-md font-bold hover:bg-[#b3942a] transition"
             >
               ANALISAR GRATUITAMENTE
             </button>
+            {isSubmitting && <p className="text-gray-500">Enviando...</p>}
+            {error && <p className="text-red-500">{error}</p>}
+            {message && <p className="text-green-500">{message}</p>}
           </form>
         </div>
 

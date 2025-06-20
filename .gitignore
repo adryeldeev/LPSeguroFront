@@ -11,7 +11,11 @@ node_modules
 dist
 dist-ssr
 *.local
+<<<<<<< HEAD
 
+=======
+.env
+>>>>>>> 36fed83 (Add landing page LPSeguro)
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
