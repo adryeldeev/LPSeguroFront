@@ -80,7 +80,7 @@ function LeadForm() {
             <input
               type="tel"
               name="telefone"
-              placeholder="Telefone com WhatsApp"
+              placeholder="Telefone whatsapp com DDD"
               className="w-full p-3 border border-gray-300 rounded-md"
               onChange={handleChange}
               required
