@@ -3,8 +3,8 @@ import { FaHandsHelping, FaWhatsapp, FaFileAlt, FaClipboardList, FaUsers, FaShie
 
 const Benefits = () => {
   return (
-    <section className="bg-white py-12 px-4 md:px-16">
-      <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-10">
+    <section className="bg-black py-12 px-4 md:px-16">
+      <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-10">
         Benefícios
       </h2>
 
