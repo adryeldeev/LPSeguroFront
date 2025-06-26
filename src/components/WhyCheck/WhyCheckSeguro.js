@@ -1,0 +1,6 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { FaBalanceScale, FaHeart, FaGlobeAmericas } from 'react-icons/fa';
+const WhyCheckSeguro = () => {
+    return (_jsxs("div", { className: "flex flex-col gap-6 max-w-md w-full m-5", children: [_jsxs("h2", { className: "text-xl sm:text-3xl md:text-3xl lg:text-3xl font-bold text-black text-center", children: ["Por que confiar na ", _jsx("span", { className: "text-[#FFD700]", children: "4S Seguro" }), "?"] }), _jsxs("div", { className: "flex items-start gap-3", children: [_jsx(FaBalanceScale, { className: "text-[#FFD700] text-xl sm:text-2xl mt-1" }), _jsx("p", { className: "text-sm sm:text-base md:text-lg", children: "Experi\u00EAncia e credibilidade em benef\u00EDcios e seguros pessoais." })] }), _jsxs("div", { className: "flex items-start gap-3", children: [_jsx(FaHeart, { className: "text-[#FFD700] text-xl sm:text-2xl mt-1" }), _jsx("p", { className: "text-sm sm:text-base md:text-lg", children: "Atendimento personalizado com an\u00E1lise gratuita." })] }), _jsxs("div", { className: "flex items-start gap-3", children: [_jsx(FaGlobeAmericas, { className: "text-[#FFD700] text-xl sm:text-2xl mt-1" }), _jsx("p", { className: "text-sm sm:text-base md:text-lg", children: "Variedade de op\u00E7\u00F5es para te ajudar a garantir seu direito." })] })] }));
+};
+export default WhyCheckSeguro;
