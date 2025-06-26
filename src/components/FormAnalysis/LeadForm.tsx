@@ -1,6 +1,6 @@
 import { useState } from "react";
 import usePublicApi from "../../Api/Api";
-
+import { AxiosResponse } from "axios";
 function LeadForm() {
   const [formData, setFormData] = useState({
     nome: "",
@@ -28,44 +28,44 @@ function LeadForm() {
     setIsSubmitting(true);
     setError("");
     try {
-      const response = api.post("/lead", {
-        nome,
-        telefone,
-        tipoAcidente,
-        cidade,
-        dataAcidente,
-      });
-      response.then((res) => {
-        setIsSubmitting(false);
-        if (res.status === 201) {
-          setMessage("Formulário enviado com sucesso!");
-          // Limpa o formulário definindo o estado para vazio
-          setFormData({
-            nome: "",
-            telefone: "",
-            tipoAcidente: "",
-            cidade: "",
-            dataAcidente: "",
-          });
-          // Opcional: Limpar a mensagem de sucesso após alguns segundos
-          setTimeout(() => {
-            setMessage("");
-          }, 5000); // Limpa a mensagem após 5 segundos
-        } else {
-          setError("Ocorreu um erro ao enviar o formulário. Tente novamente.");
-        }
-      }).catch((err) => { // Adicione um .catch para erros na promise
-          console.error("Erro na resposta da API:", err);
-          setError("Ocorreu um erro ao enviar o formulário. Tente novamente mais tarde.");
-          setIsSubmitting(false);
-      });
+const response = api.post("/lead", {
+  nome,
+  telefone,
+  tipoAcidente,
+  cidade,
+  dataAcidente,
+});
 
-    } catch (error) {
-      console.error("Erro ao enviar o formulário:", error);
+response
+  .then((res: AxiosResponse) => {
+    setIsSubmitting(false);
+    if (res.status === 201) {
+      setMessage("Formulário enviado com sucesso!");
+      setFormData({
+        nome: "",
+        telefone: "",
+        tipoAcidente: "",
+        cidade: "",
+        dataAcidente: "",
+      });
+      setTimeout(() => {
+        setMessage("");
+      }, 5000);
+    } else {
+      setError("Ocorreu um erro ao enviar o formulário. Tente novamente.");
+    }
+  })
+  .catch((err: unknown) => {
+    console.error("Erro na resposta da API:", err);
+    setError("Ocorreu um erro ao enviar o formulário. Tente novamente mais tarde.");
+    setIsSubmitting(false);
+  });
+    } catch (err) {
+      console.error("Erro ao enviar o formulário:", err);
       setError("Ocorreu um erro ao enviar o formulário. Tente novamente mais tarde.");
       setIsSubmitting(false);
     }
-  };
+  };        
 
   return (
     <section className=" py-16">
