@@ -13,7 +13,7 @@ const WhyCheckSeguro = () => {
       <div className="flex items-start gap-3">
         <FaBalanceScale className="text-[#FFD700] text-xl" />
         <p className="text-sm sm:text-base md:text-lg">
-          Experiência e credibilidade em benefícios  e seguros pessoais.
+          Experiência e credibilidade em benefícios e seguros pessoais.
         </p>
       </div>
 

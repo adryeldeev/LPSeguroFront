@@ -31,7 +31,7 @@ const HelpSection = () => {
 </p>
             
             <a
-                href="https://api.whatsapp.com/send?phone=5511999999999&text=Olá, gostaria de saber mais sobre os benefícios e seguros disponíveis."
+                href="https://api.whatsapp.com/send?phone=558597712348&text=Olá, gostaria de saber mais sobre os benefícios e seguros disponíveis."
                 className="inline-block bg-[#D4AF37] text-white px-6 py-3 rounded-lg shadow hover:bg-[#b38f2c] transition-colors"
             >
                 Fale conosco pelo WhatsApp
