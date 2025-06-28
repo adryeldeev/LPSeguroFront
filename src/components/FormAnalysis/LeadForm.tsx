@@ -8,7 +8,7 @@ function LeadForm() {
     tipoAcidente: "",
     cidade: "",
     dataAcidente: "",
-  });
+  })
   const api = usePublicApi();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
