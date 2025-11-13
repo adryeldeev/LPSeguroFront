@@ -1,5 +1,4 @@
-import { Button } from "./ui/button";
-import { ArrowRight, Phone, MessageCircle } from "lucide-react";
+import { Phone, MessageCircle } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function CTA() {
@@ -53,14 +52,22 @@ export function CTA() {
             </ul>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black shadow-lg shadow-amber-500/25" as="a" href={linkWhatsapp} target="_blank" rel="noopener noreferrer">
+              <a 
+                href={linkWhatsapp} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full h-14 inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black shadow-lg shadow-amber-500/25 h-11 px-8"
+              >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Falar no WhatsApp
-              </Button>
-              <Button size="lg" variant="outline" className="border-blue-500/50 text-blue-400 hover:bg-blue-500/10 hover:border-blue-500" as="a" href={`tel:${numberWhatsapp}`} target="_blank" rel="noopener noreferrer">
+              </a>
+              <a 
+                href={`tel:${numberWhatsapp}`}
+                className="w-full h-14 inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-blue-500/50 text-blue-400 hover:bg-blue-500/10 hover:border-blue-500 bg-transparent h-11 px-8"
+              >
                 <Phone className="w-5 h-5 mr-2" />
                 Ligar Agora
-              </Button>
+              </a>
             </div>
             
             <p className="text-sm text-gray-500 pt-2">

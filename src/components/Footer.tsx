@@ -45,11 +45,15 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-gray-400">
               <li className="flex items-start gap-2">
                 <Mail className="w-5 h-5 text-amber-400 flex-shrink-0" />
-                <span>4sseguroacidentes@gmail.com</span>
+                <a href="mailto:4sseguroacidentes@gmail.com" className="hover:text-amber-400 transition-colors">
+                  4sseguroacidentes@gmail.com
+                </a>
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="w-5 h-5 text-amber-400 flex-shrink-0" />
-                <span>(85)99771-2348</span>
+                <a href="tel:+5585997712348" className="hover:text-amber-400 transition-colors">
+                  (85)99771-2348
+                </a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-5 h-5 text-amber-400 flex-shrink-0" />
@@ -60,7 +64,7 @@ export function Footer() {
         </div>
         
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
-          <p>&copy; 2025 QU4TROS Seguros. Todos os direitos reservados.</p>
+          <p>&copy; 2025 4S SEGUROS ACIDENTES. Todos os direitos reservados.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-amber-400 transition-colors">Privacidade</a>
             <a href="#" className="hover:text-amber-400 transition-colors">Termos de Uso</a>

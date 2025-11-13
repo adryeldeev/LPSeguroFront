@@ -1,4 +1,3 @@
-import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import logoImage from "figma:asset/3fa5664101234200a05c93ec9bc86e1363454e41.png";
@@ -32,9 +31,14 @@ export function Header() {
           </nav>
           
           <div className="hidden md:flex items-center gap-4">
-            <Button className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black" as="a" href={linkWhatsapp} target="_blank" rel="noopener noreferrer">
+            <a 
+              href={linkWhatsapp} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black h-10 px-4 py-2"
+            >
               Avaliação Gratuita
-            </Button>
+            </a>
           </div>
           
           <button
@@ -64,10 +68,15 @@ export function Header() {
               <a href="#depoimentos" className="text-gray-300 hover:text-amber-400 transition-colors">
                 Depoimentos
               </a>
-              <div className="pt-4 border-t border- gray-800">
-                <Button className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black" as="a" href={linkWhatsapp} target="_blank" rel="noopener noreferrer">
+              <div className="pt-4 border-t border-gray-800">
+                <a 
+                  href={linkWhatsapp} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black h-10 px-4 py-2 w-full"
+                >
                   Avaliação Gratuita
-                </Button>
+                </a>
               </div>
             </nav>
           </div>

@@ -3,12 +3,12 @@ import { TrendingUp, Users, DollarSign, Award } from "lucide-react";
 const stats = [
   {
     icon: DollarSign,
-    value: "R$ 50M+",
+    value: "R$ 1,5M+",
     label: "em indenizações recuperadas"
   },
   {
     icon: Users,
-    value: "+5.000",
+    value: "+2.000",
     label: "clientes atendidos"
   },
   {
@@ -18,7 +18,7 @@ const stats = [
   },
   {
     icon: TrendingUp,
-    value: "+15 anos",
+    value: "+2 anos",
     label: "de experiência"
   }
 ];
