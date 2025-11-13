@@ -71,7 +71,7 @@ export function CTA() {
             </div>
             
             <p className="text-sm text-gray-500 pt-2">
-              Atendemos todo o Brasil • Mais de 5.000 casos resolvidos
+              Atendemos todo o Brasil • Mais de 2.000 casos resolvidos
             </p>
           </div>
         </div>
